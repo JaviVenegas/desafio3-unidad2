@@ -1,0 +1,222 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root{
+    --back: #1f2532;
+    --text: #1f2532;
+    --font: Poppins; 
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font);
+    width: 100%;
+}
+
+#root{
+    color: var(--text);
+    display: grid;
+    grid-template-areas: 
+        'section'
+        'nav'
+        'main'
+        'footer'
+        ;
+}
+/* navabar */
+
+nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    padding-bottom: 1rem;
+}
+
+input{
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    padding: 2px 23px 2px 10px;
+    outline: 0;
+    background-color: #f5f5f5;
+}
+
+/*End of navabar */
+
+/* section */
+section {
+    background-color: var(--back);
+    grid-area: section;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1.5rem;
+    color: white;
+        i{
+            padding-right: 1rem;
+        }
+
+
+}
+.categories h4{
+    display: none;
+}
+
+section h2{
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-size: 50px;
+    font-family: dancing script;
+}
+.categories h4 p{
+    gap: 1rem;
+}
+.categories{
+    font-size: 1rem;
+    padding-top: 1rem;
+}
+
+h4{
+        padding-bottom: 0.5rem;
+        font-weight: 550;
+    }
+
+/* End aside */
+
+
+
+
+/* main */
+
+main{
+    grid-area: main;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
+    width: 300px ;
+    background-color: #fafafa;
+    margin: auto;
+}
+
+.card img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card h2{
+    margin-bottom: 1rem;
+    font-size: 20px;
+    color: var(--text);
+    font-family: dancing script;
+}
+
+.product-info{
+    padding: 1rem;
+    font-size: 14px;
+}
+
+.buy{
+    padding-left: 4rem;
+}
+
+.buy button{
+    float: right;
+    padding: 6px;
+    font-size: 12px;
+    border-radius: 5%;
+    background-color: #1f2532 ;
+    border: none;
+    color: white;
+
+}
+.buy :hover{
+    color: #D4AF37;
+}
+
+.cart button{
+    border: none;
+    background-color: white;
+    color: #1f2532;
+}
+.product-info i:hover{
+    color: #D4AF37;
+}
+
+.compra{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* end main */
+
+/* footer */
+
+.container-footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#fafafa;
+    padding-top: 2rem;
+        p{
+            padding-top: 1rem;
+            color:var(--text);
+            font-size: 12px;
+        }
+}
+.container-footer h3{
+    padding-top: 1rem;
+    font-size: 2rem;
+    font-weight: 800;
+    font-size: 60px;
+}
+
+
+
+@media (min-width:768){
+    #root{
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 1fr 15fr 1fr ;
+        grid-template-areas: 
+            'section nav'
+            'section main'
+            'footer main'
+        ;
+    }
+    main{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .categories h4{
+        display: block;
+    }
+    nav p{
+        display: none;
+    }
+}
